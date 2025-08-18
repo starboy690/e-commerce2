@@ -2,12 +2,15 @@
   "name": "e-commerce2",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://starboy690.github.io/e-commerce2",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^7.0.0",

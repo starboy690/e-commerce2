@@ -162,7 +162,7 @@ function Homepage() {
         <div className="flex items-center justify-center max-[1289px]:mr-5 max-[1128px]:hidden ">
           <img
             className="rounded-lg shadow-xl w-115 h-93"
-            src="istockphoto-1487500111-612x612.jpg"
+            src="/src/public/images/istockphoto-1487500111-612x612.jpg"
             alt=""
           />
         </div>
@@ -191,7 +191,7 @@ function Homepage() {
               </div>
               <img
                 className="w-full h-56 rounded-t-lg"
-                src="media@2x1.avif"
+                src="/src/public/images/media@2x1.avif"
                 alt=""
               />
               <div className="flex flex-col items-start mt-2 pl-2">
@@ -229,7 +229,7 @@ function Homepage() {
             <div className="w-86 h-109 bg-white shadow-lg rounded-lg  m-4 flex flex-col">
               <img
                 className="w-full h-56 rounded-t-lg"
-                src="REF-REF-2658350-bento-apple-sv_DER-4df4ae4c-6322-42ae-ab25-11f1e3ef81ff.webp"
+                src="/src/public/images/REF-REF-2658350-bento-apple-sv_DER-4df4ae4c-6322-42ae-ab25-11f1e3ef81ff.webp"
                 alt=""
               />
               <div className="flex flex-col items-start mt-2 pl-2">
@@ -265,7 +265,7 @@ function Homepage() {
             <div className="w-86 h-109 bg-white shadow-lg rounded-lg p-2 m-4 flex flex-col">
               <img
                 className="w-full h-56 rounded-t-lg"
-                src="Bluetooth-Headset-Smartwatch-2-in-1-2-Inch-Full-Screen-Touch-Bluetooth-Call.avif"
+                src="/src/public/images/Bluetooth-Headset-Smartwatch-2-in-1-2-Inch-Full-Screen-Touch-Bluetooth-Call.avif"
                 alt=""
               />
               <div className="flex flex-col items-start mt-2">
@@ -301,7 +301,7 @@ function Homepage() {
             <div className="w-86 h-109 bg-white shadow-lg rounded-lg p-1 m-4 flex flex-col">
               <img
                 className="w-full h-56 rounded-t-lg"
-                src="csm_d581f22a5dc3c2c3d73d55ef22d3ae9d_b5602fcd6a.webp"
+                src="/src/public/images/csm_d581f22a5dc3c2c3d73d55ef22d3ae9d_b5602fcd6a.webp"
                 alt=""
               />
               <div className="flex flex-col items-start mt-2 pl-2">
@@ -344,7 +344,7 @@ function Homepage() {
             <div className="w-86 h-109 bg-white shadow-lg rounded-lg p-1 m-4 flex flex-col">
               <img
                 className="w-full h-56 rounded-t-lg"
-                src="csm_d581f22a5dc3c2c3d73d55ef22d3ae9d_b5602fcd6a.webp"
+                src="/src/public/images/csm_d581f22a5dc3c2c3d73d55ef22d3ae9d_b5602fcd6a.webp"
                 alt=""
               />
               <div className="flex flex-col items-start mt-2 pl-2">
@@ -382,7 +382,7 @@ function Homepage() {
             <div className="w-86 h-109 bg-white shadow-lg rounded-lg  m-4 flex flex-col">
               <img
                 className="w-full h-56 rounded-t-lg"
-                src="Rolex-Rainbow-Daytona-Sothebys-2.webp"
+                src="/src/public/images/Rolex-Rainbow-Daytona-Sothebys-2.webp"
                 alt=""
               />
               <div className="flex flex-col items-start mt-2 pl-2">
@@ -418,7 +418,7 @@ function Homepage() {
             <div className="w-86 h-109 bg-white shadow-lg rounded-lg p-2 m-4 flex flex-col">
               <img
                 className="w-full h-56 rounded-t-lg"
-                src="TEC-New-Sony-PlayStation-PS5-Gaming-Console-Disc-with-Marvel-s-Spider-Man-2-Bundle-White-Edition_7198fd26-acd8-4c23-820b-da7446773f7b.b0bfafe5007e5e6cfbc28138257ccafa.webp"
+                src="/src/public/images/TEC-New-Sony-PlayStation-PS5-Gaming-Console-Disc-with-Marvel-s-Spider-Man-2-Bundle-White-Edition_7198fd26-acd8-4c23-820b-da7446773f7b.b0bfafe5007e5e6cfbc28138257ccafa.webp"
                 alt=""
               />
               <div className="flex flex-col items-start mt-2">
@@ -454,7 +454,7 @@ function Homepage() {
             <div className="w-86 h-109 bg-white shadow-lg rounded-lg p-1 m-4 flex flex-col">
               <img
                 className="w-full h-56 rounded-t-lg"
-                src="csm_d581f22a5dc3c2c3d73d55ef22d3ae9d_b5602fcd6a.webp"
+                src="/src/public/images/csm_d581f22a5dc3c2c3d73d55ef22d3ae9d_b5602fcd6a.webp"
                 alt=""
               />
               <div className="flex flex-col items-start mt-2 pl-2">
