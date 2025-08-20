@@ -1,13 +1,26 @@
 import { Search, User, ShoppingCart, X } from "lucide-react";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router";
 
 function Homepage() {
   const searchBar = () => {
     // Toggle search bar visibility
     const searchInput = document.querySelector("input[type='search']");
-    if (searchInput) {
+
+    if (!searchInput) return;
+
+    // Check if input is focused
+    const isFocused = document.activeElement === searchInput;
+
+    // Only toggle if input is NOT focused
+    if (!isFocused) {
       searchInput.classList.toggle("hidden");
+    }
+    // If input is focused, do not toggle visibility
+    else {
+      searchInput.classList.remove("hidden");
+      // Keep focus on the input
     }
   };
 
@@ -105,21 +118,32 @@ function Homepage() {
           <input
             type="search"
             placeholder="Search"
-            className="border border-gray-400 rounded px-2 py-1 shadow-2xl focus:outline-none hidden "
+            className="border border-gray-400 rounded px-2 py-1 shadow-2xl focus hidden "
           />
+
           <div>
-            <User className="cursor-pointer " />
+            <Link to="/signup">
+              <User className="cursor-pointer " />
+            </Link>
           </div>
 
-          <ShoppingCart
-            className="cursor-pointer "
-            onClick={toggleCart}
-            id="cart2"
-          />
+          <div className=" flex flex-row items-center  relative">
+            <ShoppingCart
+              className="cursor-pointer "
+              onClick={toggleCart}
+              id="cart2"
+            />
+            <div
+              className="bg-red-500 text-white h-5 w-5 rounded-xl  justify-center flex items-center text-sm mt-[-12px] absolute ml-4"
+              id="cart-number"
+            >
+              0
+            </div>
+          </div>
         </div>
       </div>
 
-      <div className="flex flex-row items-center bg-gray-200  justify-evenly w-full h-158 max-[1556px]:justify-center  max-[1128px]:bg-[url('istockphoto-1487500111-612x612.jpg')] bg-cover bg-no-repeat bg-center  max-[1128px]:h-158 ">
+      <div className="flex flex-row items-center bg-gray-200  justify-evenly w-full h-158 max-[1556px]:justify-center  max-[1128px]:bg-[url('/src/public/images/istockphoto-1487500111-612x612.jpg')] bg-cover bg-no-repeat bg-center  max-[1128px]:h-158 ">
         <div className="flex flex-col w-198 max-[1289px]:pl-26  max-[1128px]:items-center max-[1128px]:text-center auto max-[1128px]:w-full max-[1128px]:filter brightness-100  ">
           <h1 className="text-5xl font-bold mb-4 max-[1128px]:text-white">
             Welcome to ShopMart!
@@ -179,7 +203,7 @@ function Homepage() {
       <div className="flex flex-col justify-evenly gap-5 w-full h-159 max-[1802px]:flex-row  max-[1802px]:flex-wrap max-[1802px]:justify-center  max-[1556px]:flex-row max-[1556px]:flex-wrap max-[1556px]:justify-evenly max-[1556px]:mt-7 max-[1556px]:h-498">
         <div>
           <div className="flex flex-row items-center justify-evenly w-full h-158  max-[1556px]:flex-col max-[1556px]:justify-evenly max-[1556px]:h-498">
-            <div className="w-86 h-109j bg-white shadow-lg rounded-lg p-1 m-4 flex flex-col">
+            <div className="w-86 h-109 bg-white shadow-lg rounded-lg p-1 m-4 flex flex-col">
               <div className="flex flex-row justify-between items-center absolute w-82 mt-2">
                 <div className="bg-red-500 rounded-xl h-5 w-18 items-center text-sm justify-center text-white flex flex-row font-light">
                   25% off
