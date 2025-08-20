@@ -3,6 +3,7 @@ import {
   Bell,
   MessageCircleQuestion,
   TrendingUp,
+  ChevronUp,
 } from "lucide-react";
 import { Link } from "react-router";
 
@@ -18,21 +19,25 @@ function Signup() {
         <div className="flex flex-row items-center justify-evenly w-94">
           <div className="relative group">
             {/* Trigger */}
-            <p className="font-bold text-lg cursor-pointer">More</p>
+            <div className="flex items-center gap-1 font-bold text-lg cursor-pointer">
+              More
+              {/* Arrow changes on hover */}
+              <ChevronUp className="transition-transform duration-300 group-hover:rotate-180 text-orange-400 font-light"></ChevronUp>
+            </div>
 
             {/* Dropdown Menu */}
-            <div className="absolute hidden  group-hover:flex flex-col bg-white shadow-lg rounded-lg p-2 gap-3 w-64 mt-5 transition-all duration-300 ease-in-out">
-              <div className="flex flex-row items-center gap-2 cursor-pointer  hover:bg-gray-100 h-6">
+            <div className="absolute hidden group-hover:flex flex-col bg-white shadow-lg rounded-lg p-2 gap-3 w-64 mt-5 transition-all duration-300 ease-in-out">
+              <div className="flex flex-row items-center gap-2 cursor-pointer hover:bg-gray-100 h-6">
                 <Bell className="text-orange-400" />
                 Notification Preference
               </div>
               <hr />
-              <div className="flex flex-row items-center gap-2 cursor-pointer   hover:bg-gray-100 h-6">
+              <div className="flex flex-row items-center gap-2 cursor-pointer hover:bg-gray-100 h-6">
                 <MessageCircleQuestion className="text-orange-400" />
                 24x7 Customer Service
               </div>
               <hr />
-              <div className="flex flex-row items-center gap-2 cursor-pointer   hover:bg-gray-100 h-6">
+              <div className="flex flex-row items-center gap-2 cursor-pointer hover:bg-gray-100 h-6">
                 <TrendingUp className="text-orange-400" />
                 Advertise
               </div>
