@@ -6,10 +6,17 @@ import {
   ChevronUp,
 } from "lucide-react";
 import { Link } from "react-router";
+import { useState } from "react";
 
 function Signup() {
+  const [currentPart, setCurrentPart] = useState("Login");
+
+  const changePart = (tabName: string) => {
+    if (currentPart !== tabName) setCurrentPart(tabName);
+  };
+
   return (
-    <div className="bg-gray-200 h-screen flex ">
+    <div className="bg-gray-200 h-[120vh] flex flex-col ">
       <div className="bg-gray-200 w-full justify-evenly gap-263 h-17 items-center sticky flex flex-row shadow-2xl z-9999 ">
         <div className="flex flex-row items-center gap-3 ml-5">
           <ShoppingCart className="text-orange-500 w-10 h-10 cursor-pointer" />
@@ -51,6 +58,120 @@ function Signup() {
             </Link>
           </div>
         </div>
+      </div>
+      <div className=" items-center flex flex-col mt-12">
+        <div className="bg-gray-600 w-120 h-11 justify-center items-center flex  shadow-lg rounded-lg p-1">
+          <div
+            className={`${
+              currentPart === "Login" ? "bg-white" : "bg-gray-500 text-white"
+            } text-black text-lg w-1/2 rounded-md h-10 items-center flex justify-center cursor-pointer`}
+            onClick={() => changePart("Login")}
+          >
+            <p className="text-center ">Log In</p>
+          </div>
+          <div
+            className={`${
+              currentPart === "SignUp" ? "bg-white" : "bg-gray-500 text-white"
+            } text-black text-lg w-1/2 h-10 rounded-md flex items-center justify-center cursor-pointer`}
+            onClick={() => changePart("SignUp")}
+          >
+            <p className="text-center">Sign Up</p>
+          </div>
+        </div>
+        <form
+          className={`${
+            currentPart === "Login"
+              ? "bg-white w-1/2 h-116 shadow-lg rounded-lg flex flex-col items-center mt-6 pt-9"
+              : "hidden"
+          } bg-white w-1/2 h-116 shadow-lg rounded-lg flex flex-col items-center  mt-6 pt-9`}
+        >
+          <div className="flex flex-col w-11/12 mt-4 gap-2">
+            <label className="text-gray-700 font-semibold">Full Name</label>
+            <input
+              type="text"
+              placeholder="Enter your full name"
+              className="border border-gray-300 rounded-md p-2 focus:outline-none focus:border-orange-400"
+              required
+            />
+          </div>
+          <div className="flex flex-col w-11/12 mt-4 gap-2">
+            <label className="text-gray-700 font-semibold">Email</label>
+            <input
+              type="email"
+              placeholder="Enter your email"
+              className="border border-gray-300 rounded-md p-2 focus:outline-none focus:border-orange-400"
+              required
+            />
+          </div>
+          <div className="flex flex-col w-11/12 mt-4 gap-2">
+            <label className="text-gray-700 font-semibold">Password</label>
+            <input
+              type="password"
+              placeholder="Enter your password"
+              className="border border-gray-300 rounded-md p-2 focus:outline-none focus:border-orange-400"
+              required
+            />
+          </div>
+          <button
+            type="submit"
+            className="bg-orange-500 text-white w-4/5 h-10 rounded-md mt-11 hover:bg-orange-600 transition duration-300 cursor-pointer shadow-xl"
+          >
+            Log In
+          </button>
+        </form>
+
+        <form
+          className={`${
+            currentPart === "SignUp"
+              ? "bg-white w-1/2 h-131 shadow-lg rounded-lg flex flex-col items-center mt-6 pt-9"
+              : "hidden"
+          } bg-white w-1/2 h-116 shadow-lg rounded-lg flex flex-col items-center  mt-6 pt-9`}
+        >
+          <div className="flex flex-col w-11/12 mt-4 gap-2">
+            <label className="text-gray-700 font-semibold">Full Name</label>
+            <input
+              type="text"
+              placeholder="Enter your full name"
+              className="border border-gray-300 rounded-md p-2 focus:outline-none focus:border-orange-400"
+              required
+            />
+          </div>
+          <div className="flex flex-col w-11/12 mt-4 gap-2">
+            <label className="text-gray-700 font-semibold">Email</label>
+            <input
+              type="email"
+              placeholder="Enter your email"
+              className="border border-gray-300 rounded-md p-2 focus:outline-none focus:border-orange-400"
+              required
+            />
+          </div>
+          <div className="flex flex-col w-11/12 mt-4 gap-2">
+            <label className="text-gray-700 font-semibold">Password</label>
+            <input
+              type="password"
+              placeholder="Enter your password"
+              className="border border-gray-300 rounded-md p-2 focus:outline-none focus:border-orange-400"
+              required
+            />
+          </div>
+          <div className="flex flex-col w-11/12 mt-4 gap-2">
+            <label className="text-gray-700 font-semibold">
+              Confirm Password
+            </label>
+            <input
+              type="password"
+              placeholder="Confirm your password"
+              className="border border-gray-300 rounded-md p-2 focus:outline-none focus:border-orange-400"
+              required
+            />
+          </div>
+          <button
+            type="submit"
+            className="bg-orange-500 text-white w-4/5 h-10 rounded-md mt-11 hover:bg-orange-600 transition duration-300 cursor-pointer shadow-xl"
+          >
+            Sign Up
+          </button>
+        </form>
       </div>
     </div>
   );

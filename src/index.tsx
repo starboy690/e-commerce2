@@ -2,8 +2,11 @@ import { Search, User, ShoppingCart, X } from "lucide-react";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router";
+import { useState } from "react";
 
 function Homepage() {
+  const [count, setCount] = useState(0);
+
   const searchBar = () => {
     // Toggle search bar visibility
     const searchInput = document.querySelector("input[type='search']");
@@ -33,7 +36,7 @@ function Homepage() {
   };
 
   return (
-    <div className="bg-white w-full h-200vh flex flex-col ">
+    <div className="bg-white w-full h-auto flex flex-col">
       {/* Shopping Cart Display */}
       <div
         className="flex flex-col bg-white fixed right-0 hidden top-0 z-10000 rounded-t-lg w-118 h-screen shadow-3xl transition all ease-in-out duration-10 overflow-y-auto"
@@ -51,7 +54,7 @@ function Homepage() {
         <div className="flex flex-row items-center mt-8 gap-3 ml-3">
           <ShoppingCart />
           <h1 className="text-2xl  text-center flex flex-row gap-4 font-bold text-gray-700">
-            Shopping Cart <span className="font-medium ">(0 items)</span>
+            Shopping Cart <span className="font-medium ">({count} items)</span>
           </h1>
         </div>
 
@@ -80,17 +83,14 @@ function Homepage() {
         <div>
           <ul className="list-none flex flex-row justify-center items-center gap-5">
             <li>
-              <a href="#home" className="text-gray-700 hover:text-orange-500">
+              <Link to="/" className="text-gray-700 hover:text-orange-500">
                 All
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="#products"
-                className="text-gray-700 hover:text-orange-500"
-              >
+              <Link to="/deals" className="text-gray-700 hover:text-orange-500">
                 Today's Deals
-              </a>
+              </Link>
             </li>
             <li>
               <a href="#about" className="text-gray-700 hover:text-orange-500">
@@ -137,7 +137,7 @@ function Homepage() {
               className="bg-red-500 text-white h-5 w-5 rounded-xl  justify-center flex items-center text-sm mt-[-12px] absolute ml-4"
               id="cart-number"
             >
-              0
+              {count}
             </div>
           </div>
         </div>
@@ -200,7 +200,7 @@ function Homepage() {
       </div>
 
       {/* Featured Products Section */}
-      <div className="flex flex-col justify-evenly gap-5 w-full h-159 max-[1802px]:flex-row  max-[1802px]:flex-wrap max-[1802px]:justify-center  max-[1556px]:flex-row max-[1556px]:flex-wrap max-[1556px]:justify-evenly max-[1556px]:mt-7 max-[1556px]:h-498">
+      <div className="flex flex-col justify-evenly gap-5 w-full h-auto max-[1802px]:flex-row  max-[1802px]:flex-wrap max-[1802px]:justify-center  max-[1556px]:flex-row max-[1556px]:flex-wrap max-[1556px]:justify-evenly max-[1556px]:mt-7 max-[1556px]:h-498">
         <div>
           <div className="flex flex-row items-center justify-evenly w-full h-158  max-[1556px]:flex-col max-[1556px]:justify-evenly max-[1556px]:h-498">
             <div className="w-86 h-109 bg-white shadow-lg rounded-lg p-1 m-4 flex flex-col">
@@ -243,7 +243,10 @@ function Homepage() {
                   cancellation technology.
                 </p>
 
-                <button className="bg-orange-500 text-white px-4 py-2 rounded shadow-lg hover:bg-orange-600 transition duration-300 mt-6 flex flex-row items-center gap-2 ml-3 cursor-pointer">
+                <button
+                  className="bg-orange-500 text-white px-4 py-2 rounded shadow-lg hover:bg-orange-600 transition duration-300 mt-6 flex flex-row items-center gap-2 ml-3 cursor-pointer"
+                  onClick={() => setCount(count + 1)}
+                >
                   <ShoppingCart />
                   Add to Cart
                 </button>
@@ -279,7 +282,10 @@ function Homepage() {
                   cancellation technology.
                 </p>
 
-                <button className="bg-orange-500 text-white px-4 py-2 rounded shadow-lg hover:bg-orange-600 transition duration-300 mt-6 flex flex-row items-center gap-2 ml-3 cursor-pointer">
+                <button
+                  className="bg-orange-500 text-white px-4 py-2 rounded shadow-lg hover:bg-orange-600 transition duration-300 mt-6 flex flex-row items-center gap-2 ml-3 cursor-pointer"
+                  onClick={() => setCount(count + 1)}
+                >
                   <ShoppingCart />
                   Add to Cart
                 </button>
@@ -315,7 +321,10 @@ function Homepage() {
                   cancellation technology.
                 </p>
 
-                <button className="bg-orange-500 text-white px-4 py-2 rounded shadow-lg hover:bg-orange-600 transition duration-300 mt-6 flex flex-row items-center gap-2 ml-3 cursor-pointer">
+                <button
+                  className="bg-orange-500 text-white px-4 py-2 rounded shadow-lg hover:bg-orange-600 transition duration-300 mt-6 flex flex-row items-center gap-2 ml-3 cursor-pointer"
+                  onClick={() => setCount(count + 1)}
+                >
                   <ShoppingCart />
                   Add to Cart
                 </button>
@@ -353,7 +362,10 @@ function Homepage() {
                   cancellation technology.
                 </p>
 
-                <button className="bg-orange-500 text-white px-4 py-2 rounded shadow-lg hover:bg-orange-600 transition duration-300 mt-6 flex flex-row items-center gap-2 ml-3 cursor-pointer">
+                <button
+                  className="bg-orange-500 text-white px-4 py-2 rounded shadow-lg hover:bg-orange-600 transition duration-300 mt-6 flex flex-row items-center gap-2 ml-3 cursor-pointer"
+                  onClick={() => setCount(count + 1)}
+                >
                   <ShoppingCart />
                   Add to Cart
                 </button>
@@ -396,7 +408,10 @@ function Homepage() {
                   cancellation technology.
                 </p>
 
-                <button className="bg-orange-500 text-white px-4 py-2 rounded shadow-lg hover:bg-orange-600 transition duration-300 mt-6 flex flex-row items-center gap-2 ml-3 cursor-pointer">
+                <button
+                  className="bg-orange-500 text-white px-4 py-2 rounded shadow-lg hover:bg-orange-600 transition duration-300 mt-6 flex flex-row items-center gap-2 ml-3 cursor-pointer"
+                  onClick={() => setCount(count + 1)}
+                >
                   <ShoppingCart />
                   Add to Cart
                 </button>
@@ -432,7 +447,10 @@ function Homepage() {
                   cancellation technology.
                 </p>
 
-                <button className="bg-orange-500 text-white px-4 py-2 rounded shadow-lg hover:bg-orange-600 transition duration-300 mt-6 flex flex-row items-center gap-2 ml-3 cursor-pointer">
+                <button
+                  className="bg-orange-500 text-white px-4 py-2 rounded shadow-lg hover:bg-orange-600 transition duration-300 mt-6 flex flex-row items-center gap-2 ml-3 cursor-pointer"
+                  onClick={() => setCount(count + 1)}
+                >
                   <ShoppingCart />
                   Add to Cart
                 </button>
@@ -468,7 +486,10 @@ function Homepage() {
                   cancellation technology.
                 </p>
 
-                <button className="bg-orange-500 text-white px-4 py-2 rounded shadow-lg hover:bg-orange-600 transition duration-300 mt-6 flex flex-row items-center gap-2 ml-3 cursor-pointer">
+                <button
+                  className="bg-orange-500 text-white px-4 py-2 rounded shadow-lg hover:bg-orange-600 transition duration-300 mt-6 flex flex-row items-center gap-2 ml-3 cursor-pointer"
+                  onClick={() => setCount(count + 1)}
+                >
                   <ShoppingCart />
                   Add to Cart
                 </button>
@@ -506,7 +527,10 @@ function Homepage() {
                   cancellation technology.
                 </p>
 
-                <button className="bg-orange-500 text-white px-4 py-2 rounded shadow-lg hover:bg-orange-600 transition duration-300 mt-6 flex flex-row items-center gap-2 ml-3 cursor-pointer">
+                <button
+                  className="bg-orange-500 text-white px-4 py-2 rounded shadow-lg hover:bg-orange-600 transition duration-300 mt-6 flex flex-row items-center gap-2 ml-3 cursor-pointer"
+                  onClick={() => setCount(count + 1)}
+                >
                   <ShoppingCart />
                   Add to Cart
                 </button>
@@ -515,6 +539,50 @@ function Homepage() {
           </div>
         </div>
       </div>
+
+      <div className="flex flex-col items-center justify-center ml-80 bg-linear-to-b from-orange-100 to-orange-300 h-80 w-370 rounded-lg shadow-lg mt-10 ">
+        <h1 className="font-bold text-2xl ">Discover The Best Offers</h1>
+        <form className="flex flex-row items-center justify-center mt-10 mb-10">
+          <input
+            type="email"
+            placeholder="Enter your email for exclusive offers"
+            required
+            className="border border-black text-red-700 rounded-md p-2 focus:outline-none w-90"
+          ></input>
+          <button className="bg-orange-500 text-white px-4 py-2 rounded shadow-lg hover:bg-orange-600 transition duration-300 ml-3 cursor-pointer">
+            Subscribe
+          </button>
+        </form>
+      </div>
+
+      <footer className="bg-gray-800 text-white mt-30 h-40">
+        <div className="bg-gray-800 text-white py-6 px-4">
+          <div className="container mx-auto text-center">
+            <p className="text-sm mb-2">
+              © 2023 ShopMart. All rights reserved.
+            </p>
+            <p className="text-xs">Terms of Service | Privacy Policy</p>
+          </div>
+        </div>
+        <div className="bg-orange-200 text-white py-4 px-4 mt-4">
+          <div className="container mx-auto text-center">
+            <p className="text-xs text-black ">
+              Follow us on:
+              <a href="#" className="text-blue-400 hover:underline ml-2">
+                Facebook
+              </a>{" "}
+              |
+              <a href="#" className="text-blue-400 hover:underline ml-2">
+                Twitter
+              </a>{" "}
+              |
+              <a href="#" className="text-blue-400 hover:underline ml-2">
+                Instagram
+              </a>
+            </p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
