@@ -17,7 +17,7 @@ function Signup() {
 
   return (
     <div className="bg-gray-200 h-[120vh] flex flex-col ">
-      <div className="bg-gray-200 w-full justify-evenly gap-263 h-17 items-center sticky flex flex-row shadow-2xl z-9999 ">
+      <div className="bg-gray-200 w-full justify-evenly gap-3 h-17 items-center sticky flex flex-row shadow-2xl z-9999 ">
         <div className="flex flex-row items-center gap-3 ml-5">
           <ShoppingCart className="text-orange-500 w-10 h-10 cursor-pointer" />
           <p className="text-2xl font-bold ">ShopMart</p>

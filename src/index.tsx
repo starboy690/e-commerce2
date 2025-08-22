@@ -1,4 +1,4 @@
-import { Search, User, ShoppingCart, X } from "lucide-react";
+import { Search, User, ShoppingCart, X , Menu } from "lucide-react";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router";
@@ -35,11 +35,37 @@ function Homepage() {
     }
   };
 
+  const menuDisplay = () => {
+  const menu = document.getElementById("menu");
+  const cancel = document.getElementById("cancel");
+  const popUp = document.getElementById("popup");
+
+  if (!menu || !cancel || !popUp) return; // safety check
+
+  menu.addEventListener("click", () => {
+    popUp.classList.remove("hidden");   // show popup
+    popUp.classList.add("block");       // make it visible
+    cancel.classList.add("block");  // show X
+    menu.classList.add("hidden");       // hide menu icon
+  });
+
+  cancel.addEventListener("click", () => {
+    popUp.classList.add("hidden");      // hide popup
+    cancel.classList.add("hidden");     // hide X
+    menu.classList.remove("hidden");    // show menu icon
+  });
+};
+
+
+   
+
+    
+
   return (
     <div className="bg-white w-full h-auto flex flex-col">
       {/* Shopping Cart Display */}
       <div
-        className="flex flex-col bg-white fixed right-0 hidden top-0 z-10000 rounded-t-lg w-118 h-screen shadow-3xl transition all ease-in-out duration-10 overflow-y-auto"
+        className="flex flex-col bg-white fixed right-0 hidden top-0 z-10000 rounded-t-lg w-118 h-screen shadow-3xl transition-all duration-700 ease-in-out overflow-hidden"
         id="cart"
       >
         <div>
@@ -65,7 +91,7 @@ function Homepage() {
           </p>
 
           <button
-            className="bg-orange-500 text-white px-4 py-2 rounded shadow-lg hover:bg-orange-600 transition duration-300 ml-3 cursor-pointer"
+            className="bg-orange-500 text-white px-4 py-2 rounded shadow-lg hover:bg-orange-600 transition duration-1000 ml-3 cursor-pointer"
             onClick={toggleCart}
           >
             Start Shopping
@@ -75,12 +101,12 @@ function Homepage() {
 
       {/* Navbar */}
       <div className="bg-gray-200 w-full justify-evenly h-23 items-center fixed flex flex-row shadow-2xl z-9999 ">
-        <div className="flex flex-row items-center gap-3 ml-5">
+        <div className="flex flex-row items-center gap-3 ml-5 max-[1128px]:mr-32">
           <ShoppingCart className="text-orange-500 w-10 h-10 cursor-pointer" />
           <p className="text-2xl font-bold ">ShopMart</p>
         </div>
-
-        <div>
+        {/* Links to pages */}
+        <div className="max-[1128px]:hidden">
           <ul className="list-none flex flex-row justify-center items-center gap-5">
             <li>
               <Link to="/" className="text-gray-700 hover:text-orange-500">
@@ -112,7 +138,7 @@ function Homepage() {
             </li>
           </ul>
         </div>
-
+        {/* Icons */}
         <div className="flex items-center space-x-6">
           <Search className="cursor-pointer " onClick={searchBar} />
           <input
@@ -129,7 +155,7 @@ function Homepage() {
 
           <div className=" flex flex-row items-center  relative">
             <ShoppingCart
-              className="cursor-pointer "
+              className="cursor-pointer transition-all duration-700 ease-in-out overflow-hidden"
               onClick={toggleCart}
               id="cart2"
             />
@@ -141,6 +167,44 @@ function Homepage() {
             </div>
           </div>
         </div>
+        {/* PopUp*/}
+        <div className="bg-white w-full h-60 absolute top-0 left-0 transition-all duration-1000 ease-in-out hidden shadow-2xl z-9999 " >
+          <ul className="list-none flex flex-col justify-center items-center gap-5 mt-4 ">
+            <li className="hidden max-[1128px]:block">
+              <Link to="/" className="text-gray-700 hover:text-orange-500">
+                Home
+              </Link>
+            </li>
+            <li className="hidden max-[1128px]:block">
+              <Link to="/deals" className="text-gray-700 hover:text-orange-500">
+                Today's Deals
+              </Link>
+            </li>
+            <li className="hidden max-[1128px]:block">
+              <a href="#about" className="text-gray-700 hover:text-orange-500">
+                Customer Service
+              </a>
+            </li>
+            <li className="hidden max-[1128px]:block">
+              <a href="#contact" className="text-gray-700 hover:text-orange-500">
+                Registry
+              </a>
+            </li>
+            <li className="hidden max-[1128px]:block">
+              <a href="#cart" className="text-gray-700 hover:text-orange-500">
+                Gift Cards
+              </a>
+            </li>
+          </ul>
+        </div>
+
+
+        <div className="max-[1128px]:flex hidden relative items-center justify-center cursor-pointer text-2xl border-red-400 rounded-lg border border-2">
+            <Menu size={35} id="menu" onClick={menuDisplay}/>
+             <X  size={31}  className="absolute hidden" id="cancel"/>
+        </div>
+
+
       </div>
 
       <div className="flex flex-row items-center bg-gray-200  justify-evenly w-full h-158 max-[1556px]:justify-center  max-[1128px]:bg-[url('/src/assets/istockphoto-1487500111-612x612.jpg')] bg-cover bg-no-repeat bg-center  max-[1128px]:h-158 ">
@@ -200,7 +264,7 @@ function Homepage() {
       </div>
 
       {/* Featured Products Section */}
-      <div className="flex flex-col justify-evenly gap-5 w-full h-auto max-[1802px]:flex-row  max-[1802px]:flex-wrap max-[1802px]:justify-center  max-[1556px]:flex-row max-[1556px]:flex-wrap max-[1556px]:justify-evenly max-[1556px]:mt-7 max-[1556px]:h-498">
+      <div className="flex flex-col justify-evenly gap-5 w-full h-auto max-[1802px]:flex-row  max-[1802px]:flex-wrap max-[1802px]:justify-center  max-[1556px]:flex-row max-[1556px]:flex-wrap max-[1556px]:justify-evenly max-[1556px]:mt-7 max-[1556px]:h-auto">
         <div>
           <div className="flex flex-row items-center justify-evenly w-full h-158  max-[1556px]:flex-col max-[1556px]:justify-evenly max-[1556px]:h-498">
             <div className="w-86 h-109 bg-white shadow-lg rounded-lg p-1 m-4 flex flex-col">
@@ -540,7 +604,7 @@ function Homepage() {
         </div>
       </div>
 
-      <div className="flex flex-col items-center justify-center ml-80 bg-linear-to-b from-orange-100 to-orange-300 h-80 w-370 rounded-lg shadow-lg mt-10 ">
+      <div className="flex flex-col items-center justify-center  hidden ml-8 bg-linear-to-b from-orange-100 to-orange-300 h-80 w-370 rounded-lg shadow-lg mt-10 ">
         <h1 className="font-bold text-2xl ">Discover The Best Offers</h1>
         <form className="flex flex-row items-center justify-center mt-10 mb-10">
           <input
@@ -555,7 +619,7 @@ function Homepage() {
         </form>
       </div>
 
-      <footer className="bg-gray-800 text-white mt-30 h-40">
+      <footer className="bg-gray-800 text-white mt-30 h-40 ">
         <div className="bg-gray-800 text-white py-6 px-4">
           <div className="container mx-auto text-center">
             <p className="text-sm mb-2">
