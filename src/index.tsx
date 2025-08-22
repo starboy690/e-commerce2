@@ -1,4 +1,4 @@
-import { Search, User, ShoppingCart, X , Menu } from "lucide-react";
+import { Search, User, ShoppingCart, X, Menu } from "lucide-react";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router";
@@ -36,30 +36,25 @@ function Homepage() {
   };
 
   const menuDisplay = () => {
-  const menu = document.getElementById("menu");
-  const cancel = document.getElementById("cancel");
-  const popUp = document.getElementById("popup");
+    const menu = document.getElementById("menu");
+    const cancel = document.getElementById("cancel");
+    const popUp = document.getElementById("popup");
 
-  if (!menu || !cancel || !popUp) return; // safety check
+    if (!menu || !cancel || !popUp) return; // safety check
 
-  menu.addEventListener("click", () => {
-    popUp.classList.remove("hidden");   // show popup
-    popUp.classList.add("block");       // make it visible
-    cancel.classList.add("block");  // show X
-    menu.classList.add("hidden");       // hide menu icon
-  });
+    menu.addEventListener("click", () => {
+      popUp.classList.remove("hidden"); // show popup
+      popUp.classList.add("block"); // make it visible
+      cancel.classList.add("block"); // show X
+      menu.classList.add("hidden"); // hide menu icon
+    });
 
-  cancel.addEventListener("click", () => {
-    popUp.classList.add("hidden");      // hide popup
-    cancel.classList.add("hidden");     // hide X
-    menu.classList.remove("hidden");    // show menu icon
-  });
-};
-
-
-   
-
-    
+    cancel.addEventListener("click", () => {
+      popUp.classList.add("hidden"); // hide popup
+      cancel.classList.add("hidden"); // hide X
+      menu.classList.remove("hidden"); // show menu icon
+    });
+  };
 
   return (
     <div className="bg-white w-full h-auto flex flex-col">
@@ -109,7 +104,7 @@ function Homepage() {
         <div className="max-[1128px]:hidden">
           <ul className="list-none flex flex-row justify-center items-center gap-5">
             <li>
-              <Link to="/" className="text-gray-700 hover:text-orange-500">
+              <Link to="/" className="text-orange-600 ">
                 All
               </Link>
             </li>
@@ -168,7 +163,7 @@ function Homepage() {
           </div>
         </div>
         {/* PopUp*/}
-        <div className="bg-white w-full h-60 absolute top-0 left-0 transition-all duration-1000 ease-in-out hidden shadow-2xl z-9999 " >
+        <div className="bg-white w-full h-60 absolute top-0 left-0 transition-all duration-1000 ease-in-out hidden shadow-2xl z-9999 ">
           <ul className="list-none flex flex-col justify-center items-center gap-5 mt-4 ">
             <li className="hidden max-[1128px]:block">
               <Link to="/" className="text-gray-700 hover:text-orange-500">
@@ -186,7 +181,10 @@ function Homepage() {
               </a>
             </li>
             <li className="hidden max-[1128px]:block">
-              <a href="#contact" className="text-gray-700 hover:text-orange-500">
+              <a
+                href="#contact"
+                className="text-gray-700 hover:text-orange-500"
+              >
                 Registry
               </a>
             </li>
@@ -198,13 +196,15 @@ function Homepage() {
           </ul>
         </div>
 
-
-        <div className="max-[1128px]:flex hidden relative items-center justify-center cursor-pointer text-2xl border-red-400 rounded-lg border border-2">
-            <Menu size={35} id="menu" onClick={menuDisplay}/>
-             <X  size={31}  className="absolute hidden" id="cancel"/>
+        <div className="max-[1128px]:flex hidden relative items-center justify-center cursor-pointer text-2xl border-gray-400 rounded-md border border-2">
+          <Menu size={35} id="menu" onClick={menuDisplay} />
+          <X
+            size={31}
+            className="absolute hidden"
+            id="cancel"
+            onClick={menuDisplay}
+          />
         </div>
-
-
       </div>
 
       <div className="flex flex-row items-center bg-gray-200  justify-evenly w-full h-158 max-[1556px]:justify-center  max-[1128px]:bg-[url('/src/assets/istockphoto-1487500111-612x612.jpg')] bg-cover bg-no-repeat bg-center  max-[1128px]:h-158 ">
@@ -444,7 +444,7 @@ function Homepage() {
             <div className="w-86 h-109 bg-white shadow-lg rounded-lg p-1 m-4 flex flex-col">
               <img
                 className="w-full h-56 rounded-t-lg"
-                src="/src/assets/csm_d581f22a5dc3c2c3d73d55ef22d3ae9d_b5602fcd6a.webp"
+                src="src/assets/service.webp"
                 alt=""
               />
               <div className="flex flex-col items-start mt-2 pl-2">
@@ -452,13 +452,11 @@ function Homepage() {
                   <FontAwesomeIcon icon={faStar} color="gold" />
                   <span>4.8</span>
                   <span className="font-medium text-sm text-gray-400">
-                    (156)
+                    (12)
                   </span>
                 </p>
 
-                <p className="text-gray-700 font-bold">
-                  Premium Wireless Headphone
-                </p>
+                <p className="text-gray-700 font-bold">Rolex 45 Setware 2019</p>
 
                 <p className="flex flex-row gap-2 text-red-500 text-lg font-semibold items-center">
                   $299.99{" "}
@@ -497,7 +495,9 @@ function Homepage() {
                   </span>
                 </p>
 
-                <p className="text-gray-700 font-bold">Iphone 14 Pro Max</p>
+                <p className="text-gray-700 font-bold">
+                  Rolex Rainbow 23P Fort
+                </p>
 
                 <p className="flex flex-row gap-2 text-red-500 text-lg font-semibold items-center">
                   $299.99{" "}
@@ -536,7 +536,7 @@ function Homepage() {
                   </span>
                 </p>
 
-                <p className="text-gray-700 font-bold">Premium Smart Watch</p>
+                <p className="text-gray-700 font-bold">PS5 SpiderMan Edition</p>
 
                 <p className="flex flex-row gap-2 text-red-500 text-lg font-semibold items-center">
                   $299.99{" "}
@@ -563,7 +563,7 @@ function Homepage() {
             <div className="w-86 h-109 bg-white shadow-lg rounded-lg p-1 m-4 flex flex-col">
               <img
                 className="w-full h-56 rounded-t-lg"
-                src="/src/assets/csm_d581f22a5dc3c2c3d73d55ef22d3ae9d_b5602fcd6a.webp"
+                src="src/assets/6ab52adc-8b80-43b5-9d17-4f83146452a0.50dca0cb2d1c881fb43e99a99cde2522.webp"
                 alt=""
               />
               <div className="flex flex-col items-start mt-2 pl-2">
@@ -576,7 +576,7 @@ function Homepage() {
                 </p>
 
                 <p className="text-gray-700 font-bold">
-                  Premium Wireless Headphone
+                  Wireless Colourful Keyboard
                 </p>
 
                 <p className="flex flex-row gap-2 text-red-500 text-lg font-semibold items-center">
