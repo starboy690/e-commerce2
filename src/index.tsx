@@ -30,31 +30,13 @@ function Homepage() {
   const toggleCart = () => {
     // Toggle shopping cart visibility
     const cartDisplay = document.getElementById("cart");
+
     if (cartDisplay) {
       cartDisplay.classList.toggle("hidden");
     }
   };
 
-  const menuDisplay = () => {
-    const menu = document.getElementById("menu");
-    const cancel = document.getElementById("cancel");
-    const popUp = document.getElementById("popup");
-
-    if (!menu || !cancel || !popUp) return; // safety check
-
-    menu.addEventListener("click", () => {
-      popUp.classList.remove("hidden"); // show popup
-      popUp.classList.add("block"); // make it visible
-      cancel.classList.add("block"); // show X
-      menu.classList.add("hidden"); // hide menu icon
-    });
-
-    cancel.addEventListener("click", () => {
-      popUp.classList.add("hidden"); // hide popup
-      cancel.classList.add("hidden"); // hide X
-      menu.classList.remove("hidden"); // show menu icon
-    });
-  };
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div className="bg-white w-full h-auto flex flex-col">
@@ -163,24 +145,28 @@ function Homepage() {
           </div>
         </div>
         {/* PopUp*/}
-        <div className="bg-white w-full h-60 absolute top-0 left-0 transition-all duration-1000 ease-in-out hidden shadow-2xl z-9999 ">
+        <div
+          className={`bg-white w-full absolute top-0 left-0 shadow-2xl z-[9999] overflow-hidden transition-all duration-900 ease-in-out ${
+            isOpen ? "h-60 opacity-100 mt-23" : "h-0 opacity-0 mt-0"
+          }`}
+        >
           <ul className="list-none flex flex-col justify-center items-center gap-5 mt-4 ">
-            <li className="hidden max-[1128px]:block">
+            <li>
               <Link to="/" className="text-gray-700 hover:text-orange-500">
                 Home
               </Link>
             </li>
-            <li className="hidden max-[1128px]:block">
+            <li>
               <Link to="/deals" className="text-gray-700 hover:text-orange-500">
                 Today's Deals
               </Link>
             </li>
-            <li className="hidden max-[1128px]:block">
+            <li>
               <a href="#about" className="text-gray-700 hover:text-orange-500">
                 Customer Service
               </a>
             </li>
-            <li className="hidden max-[1128px]:block">
+            <li>
               <a
                 href="#contact"
                 className="text-gray-700 hover:text-orange-500"
@@ -188,7 +174,7 @@ function Homepage() {
                 Registry
               </a>
             </li>
-            <li className="hidden max-[1128px]:block">
+            <li>
               <a href="#cart" className="text-gray-700 hover:text-orange-500">
                 Gift Cards
               </a>
@@ -197,13 +183,11 @@ function Homepage() {
         </div>
 
         <div className="max-[1128px]:flex hidden relative items-center justify-center cursor-pointer text-2xl border-gray-400 rounded-md border border-2">
-          <Menu size={35} id="menu" onClick={menuDisplay} />
-          <X
-            size={31}
-            className="absolute hidden"
-            id="cancel"
-            onClick={menuDisplay}
-          />
+          {!isOpen ? (
+            <Menu size={35} id="menu" onClick={() => setIsOpen(true)} />
+          ) : (
+            <X size={31} id="cancel" onClick={() => setIsOpen(false)} />
+          )}
         </div>
       </div>
 

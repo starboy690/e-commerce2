@@ -14,18 +14,10 @@ function Deals() {
     }
   };
 
-  const style = {
-    background:
-      "linear-gradient(90deg, rgba(157, 197, 237, 0.61) 8%, rgba(207, 232, 221, 0.77) 80%)",
-    height: "40vh", // optional: to cover full viewport height
-    padding: "16px",
-    borderRadius: "7px",
-  };
-
   return (
     <div className="bg-white w-full h-auto flex flex-col">
       {/* Navbar */}
-      <div className="bg-gray-200 w-full justify-evenly h-23 items-center fixed flex flex-row shadow-2xl z-9999 ">
+      <div className="bg-gray-200 w-full justify-evenly h-23 items-center  flex flex-row shadow-2xl z-9999 ">
         <div className="flex flex-row items-center gap-3 ml-5 max-[1128px]:mr-32">
           <ShoppingCart className="text-orange-500 w-10 h-10 cursor-pointer" />
           <p className="text-2xl font-bold ">ShopMart</p>
@@ -126,7 +118,7 @@ function Deals() {
           <X size={31} className="absolute hidden" id="cancel" />
         </div>
       </div>
-      <div className="w-full justify-evenly items-center h-196 flex flex-row bg-linear-to-b from-red-200 via-blue-200 to-orange-300 relative overflow-hidden">
+      <div className="w-full justify-evenly items-center h-196 flex flex-row bg-linear-to-b from-red-200 via-blue-200 to-orange-300 ">
         <div className="flex flex-col gap-5">
           <h1 className="text-3xl font-bold">PREMIUM WORLD CLASS WATCHES</h1>
           <p>
@@ -147,23 +139,16 @@ function Deals() {
           <div>
             <div className="flex flex-row items-center gap-2">
               <h1 className="font-bold text-3xl text-black">$79.99</h1>
-              <span className="line-through text-md text-red-400">$179.99</span>
+              <span className="line-through text-md text-red-500">$179.99</span>
             </div>
-            <div></div>
           </div>
         </div>
-        <div style={style}>
+        <div className="bg-[linear-gradient(90deg,rgba(157,197,237,0.61)_8%,rgba(207,232,221,0.77)_80%)] p-6 rounded-lg relative h-[350px] flex">
           <img
             src="src/assets/rolex-new-watches-2025-new-dials_m126518ln-0014_2501stojan_001-landscape.jpg"
             alt=""
             className="rounded-lg w-full h-full"
           />
-        </div>
-
-        <div className="absolute h-30 w-30 left-408 shadow-2xl top-43 rounded-[50%] bg-linear-to-l from-red-300 to-red-400 items-center flex justify-center">
-          <p className=" text-white text-xl font-bold text-center">
-            30% <span className="text-md font-light">Off</span>
-          </p>
         </div>
       </div>
     </div>

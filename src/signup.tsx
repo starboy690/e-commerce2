@@ -131,6 +131,7 @@ function Signup() {
             <label className="text-gray-700 font-semibold">Full Name</label>
             <input
               type="text"
+              name="fullName"
               placeholder="Enter your full name"
               className="border border-gray-300 rounded-md p-2 focus:outline-none focus:border-orange-400"
               required
@@ -140,6 +141,7 @@ function Signup() {
             <label className="text-gray-700 font-semibold">Email</label>
             <input
               type="email"
+              name="email"
               placeholder="Enter your email"
               className="border border-gray-300 rounded-md p-2 focus:outline-none focus:border-orange-400"
               required
@@ -147,8 +149,10 @@ function Signup() {
           </div>
           <div className="flex flex-col w-11/12 mt-4 gap-2">
             <label className="text-gray-700 font-semibold">Password</label>
+
             <input
               type="password"
+              name="password"
               placeholder="Enter your password"
               className="border border-gray-300 rounded-md p-2 focus:outline-none focus:border-orange-400"
               required
@@ -160,6 +164,7 @@ function Signup() {
             </label>
             <input
               type="password"
+              name="confirm_password"
               placeholder="Confirm your password"
               className="border border-gray-300 rounded-md p-2 focus:outline-none focus:border-orange-400"
               required
