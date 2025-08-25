@@ -5,6 +5,7 @@ import { Link } from "react-router";
 import { useState } from "react";
 
 function Homepage() {
+  // @ts-ignore
   const [count, setCount] = useState(0);
 
   const searchBar = () => {
