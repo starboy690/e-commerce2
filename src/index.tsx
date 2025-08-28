@@ -118,11 +118,14 @@ function Homepage() {
         </div>
         {/* Icons */}
         <div className="flex items-center space-x-6">
-          <Search className="cursor-pointer " onClick={searchBar} />
+          <Search
+            className="cursor-pointer max-[770px]:hidden"
+            onClick={searchBar}
+          />
           <input
             type="search"
             placeholder="Search"
-            className="border border-gray-400 rounded px-2 py-1 shadow-2xl focus hidden "
+            className="border border-gray-400 rounded px-2 py-1 shadow-2xl focus hidden max-[770px]:hidden "
           />
 
           <div>
@@ -192,9 +195,9 @@ function Homepage() {
         </div>
       </div>
 
-      <div className="flex flex-row items-center bg-gray-200  justify-evenly w-full h-158 max-[1556px]:justify-center  max-[1128px]:bg-[url('/src/assets/istockphoto-1487500111-612x612.jpg')] bg-cover bg-no-repeat bg-center  max-[1128px]:h-158 ">
-        <div className="flex flex-col w-198 max-[1289px]:pl-26  max-[1128px]:items-center max-[1128px]:text-center auto max-[1128px]:w-full max-[1128px]:filter brightness-100  ">
-          <h1 className="text-5xl font-bold mb-4 max-[1128px]:text-white">
+      <div className="flex flex-row items-center bg-gray-200  justify-evenly w-full h-158 max-[1556px]:justify-center  max-[1128px]:bg-[url('/src/assets/istockphoto-1487500111-612x612.jpg')] bg-cover bg-no-repeat bg-center  max-[1128px]:h-158 max-[730px]:justify-center items-center max-[730px]:h-198 max-[730px]:pt-6 max-[730px]:mr-7">
+        <div className="flex flex-col w-198 max-[1289px]:pl-6  max-[1128px]:items-center max-[1128px]:text-center auto max-[1128px]:w-full max-[1128px]:filter brightness-100  ">
+          <h1 className="text-5xl font-bold mb-4 max-[1128px]:text-white max-[580px]:">
             Welcome to ShopMart!
           </h1>
           <p className="text-3xl text-orange-400 mb-6 font-bold max-[1128px]:text-orange-600">
