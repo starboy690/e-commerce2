@@ -145,7 +145,7 @@ function Deals() {
         </div>
         <div className="bg-[linear-gradient(90deg,rgba(157,197,237,0.61)_8%,rgba(207,232,221,0.77)_80%)] p-6 rounded-lg relative h-[350px] flex">
           <img
-            src="src/assets/rolex-new-watches-2025-new-dials_m126518ln-0014_2501stojan_001-landscape.jpg"
+            src="/images/rolex-new-watches-2025-new-dials_m126518ln-0014_2501stojan_001-landscape.jpg"
             alt=""
             className="rounded-lg w-full h-full"
           />

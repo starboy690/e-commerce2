@@ -195,7 +195,7 @@ function Homepage() {
         </div>
       </div>
 
-      <div className="flex flex-row items-center bg-gray-200  justify-evenly w-full h-158 max-[1556px]:justify-center  max-[1128px]:bg-[url('/src/assets/istockphoto-1487500111-612x612.jpg')] bg-cover bg-no-repeat bg-center  max-[1128px]:h-158 max-[730px]:justify-center items-center max-[730px]:h-198 max-[730px]:pt-6 max-[730px]:mr-7">
+      <div className="flex flex-row items-center bg-gray-200  justify-evenly w-full h-158 max-[1556px]:justify-center  max-[1128px]:bg-[url('/images/istockphoto-1487500111-612x612.jpg')] bg-cover bg-no-repeat bg-center  max-[1128px]:h-158 max-[730px]:justify-center items-center max-[730px]:h-198 max-[730px]:pt-6 max-[730px]:mr-7">
         <div className="flex flex-col w-198 max-[1289px]:pl-6  max-[1128px]:items-center max-[1128px]:text-center auto max-[1128px]:w-full max-[1128px]:filter brightness-100  ">
           <h1 className="text-5xl font-bold mb-4 max-[1128px]:text-white max-[580px]:">
             Welcome to ShopMart!
@@ -238,7 +238,7 @@ function Homepage() {
         <div className="flex items-center justify-center max-[1289px]:mr-5 max-[1128px]:hidden ">
           <img
             className="rounded-lg shadow-xl w-115 h-93"
-            src="src/assets/istockphoto-1487500111-612x612.jpg"
+            src="/images/istockphoto-1487500111-612x612.jpg"
             alt=""
           />
         </div>
@@ -267,7 +267,7 @@ function Homepage() {
               </div>
               <img
                 className="w-full h-56 rounded-t-lg"
-                src="src/assets/media@2x1.avif"
+                src="/images/media@2x1.avif"
                 alt=""
               />
               <div className="flex flex-col items-start mt-2 pl-2">
@@ -308,7 +308,7 @@ function Homepage() {
             <div className="w-86 h-109 bg-white shadow-lg rounded-lg  m-4 flex flex-col">
               <img
                 className="w-full h-56 rounded-t-lg"
-                src="src/assets/REF-REF-2658350-bento-apple-sv_DER-4df4ae4c-6322-42ae-ab25-11f1e3ef81ff.webp"
+                src="/images/REF-REF-2658350-bento-apple-sv_DER-4df4ae4c-6322-42ae-ab25-11f1e3ef81ff.webp"
                 alt=""
               />
               <div className="flex flex-col items-start mt-2 pl-2">
@@ -347,7 +347,7 @@ function Homepage() {
             <div className="w-86 h-109 bg-white shadow-lg rounded-lg p-2 m-4 flex flex-col">
               <img
                 className="w-full h-56 rounded-t-lg"
-                src="/src/assets/Bluetooth-Headset-Smartwatch-2-in-1-2-Inch-Full-Screen-Touch-Bluetooth-Call.avif"
+                src="/images/Bluetooth-Headset-Smartwatch-2-in-1-2-Inch-Full-Screen-Touch-Bluetooth-Call.avif"
                 alt=""
               />
               <div className="flex flex-col items-start mt-2">
@@ -386,7 +386,7 @@ function Homepage() {
             <div className="w-86 h-109 bg-white shadow-lg rounded-lg p-1 m-4 flex flex-col">
               <img
                 className="w-full h-56 rounded-t-lg"
-                src="/src/assets/csm_d581f22a5dc3c2c3d73d55ef22d3ae9d_b5602fcd6a.webp"
+                src="/images/csm_d581f22a5dc3c2c3d73d55ef22d3ae9d_b5602fcd6a.webp"
                 alt=""
               />
               <div className="flex flex-col items-start mt-2 pl-2">
@@ -432,7 +432,7 @@ function Homepage() {
             <div className="w-86 h-109 bg-white shadow-lg rounded-lg p-1 m-4 flex flex-col">
               <img
                 className="w-full h-56 rounded-t-lg"
-                src="src/assets/service.webp"
+                src="/images/service.webp"
                 alt=""
               />
               <div className="flex flex-col items-start mt-2 pl-2">
@@ -471,7 +471,7 @@ function Homepage() {
             <div className="w-86 h-109 bg-white shadow-lg rounded-lg  m-4 flex flex-col">
               <img
                 className="w-full h-56 rounded-t-lg"
-                src="/src/assets/Rolex-Rainbow-Daytona-Sothebys-2.webp"
+                src="/images/Rolex-Rainbow-Daytona-Sothebys-2.webp"
                 alt=""
               />
               <div className="flex flex-col items-start mt-2 pl-2">
@@ -512,7 +512,7 @@ function Homepage() {
             <div className="w-86 h-109 bg-white shadow-lg rounded-lg p-2 m-4 flex flex-col">
               <img
                 className="w-full h-56 rounded-t-lg"
-                src="/src/assets/TEC-New-Sony-PlayStation-PS5-Gaming-Console-Disc-with-Marvel-s-Spider-Man-2-Bundle-White-Edition_7198fd26-acd8-4c23-820b-da7446773f7b.b0bfafe5007e5e6cfbc28138257ccafa.webp"
+                src="/images/TEC-New-Sony-PlayStation-PS5-Gaming-Console-Disc-with-Marvel-s-Spider-Man-2-Bundle-White-Edition_7198fd26-acd8-4c23-820b-da7446773f7b.b0bfafe5007e5e6cfbc28138257ccafa.webp"
                 alt=""
               />
               <div className="flex flex-col items-start mt-2">
@@ -551,7 +551,7 @@ function Homepage() {
             <div className="w-86 h-109 bg-white shadow-lg rounded-lg p-1 m-4 flex flex-col">
               <img
                 className="w-full h-56 rounded-t-lg"
-                src="src/assets/6ab52adc-8b80-43b5-9d17-4f83146452a0.50dca0cb2d1c881fb43e99a99cde2522.webp"
+                src="/images/6ab52adc-8b80-43b5-9d17-4f83146452a0.50dca0cb2d1c881fb43e99a99cde2522.webp"
                 alt=""
               />
               <div className="flex flex-col items-start mt-2 pl-2">
