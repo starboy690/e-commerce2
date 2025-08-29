@@ -29,11 +29,17 @@ function Homepage() {
   };
 
   const toggleCart = () => {
-    // Toggle shopping cart visibility
     const cartDisplay = document.getElementById("cart");
+    if (!cartDisplay) return; // exit if element not found
 
-    if (cartDisplay) {
-      cartDisplay.classList.toggle("hidden");
+    if (cartDisplay.classList.contains("hidden")) {
+      // Show cart
+      cartDisplay.classList.remove("hidden");
+      document.body.style.overflow = "hidden"; // prevent page scroll
+    } else {
+      // Hide cart
+      cartDisplay.classList.add("hidden");
+      document.body.style.overflow = "auto"; // restore scroll
     }
   };
 
@@ -43,7 +49,7 @@ function Homepage() {
     <div className="bg-white w-full h-auto flex flex-col">
       {/* Shopping Cart Display */}
       <div
-        className="flex flex-col bg-white fixed right-0 hidden top-0 z-10000 rounded-t-lg w-118 h-screen shadow-3xl transition-all duration-700 ease-in-out overflow-hidden"
+        className="flex flex-col bg-white fixed right-0 hidden top-0 z-10000 rounded-t-lg w-118 h-screen shadow-3xl transition-all duration-700 ease-in-out overflow-hidden max-[570px]:w-89"
         id="cart"
       >
         <div>
@@ -55,10 +61,13 @@ function Homepage() {
             {/* Close button */}
           </button>
         </div>
-        <div className="flex flex-row items-center mt-8 gap-3 ml-3">
+        <div className="flex flex-row items-center mt-8 gap-3 ml-3 max-[570px]:gap-1">
           <ShoppingCart />
-          <h1 className="text-2xl  text-center flex flex-row gap-4 font-bold text-gray-700">
-            Shopping Cart <span className="font-medium ">({count} items)</span>
+          <h1 className="text-2xl  text-center flex flex-row gap-4 font-bold text-gray-700 max-[570px]:lg font-medium">
+            Shopping Cart{" "}
+            <span className="font-medium max-[570px]:gap-1">
+              ({count} items)
+            </span>
           </h1>
         </div>
 
@@ -78,10 +87,10 @@ function Homepage() {
       </div>
 
       {/* Navbar */}
-      <div className="bg-gray-200 w-full justify-evenly h-23 items-center fixed flex flex-row shadow-2xl z-9999 ">
+      <div className="bg-gray-200 w-full justify-evenly h-23 items-center sticky flex flex-row shadow-2xl z-9999  ">
         <div className="flex flex-row items-center gap-3 ml-5 max-[1128px]:mr-32">
-          <ShoppingCart className="text-orange-500 w-10 h-10 cursor-pointer" />
-          <p className="text-2xl font-bold ">ShopMart</p>
+          <ShoppingCart className="text-orange-500 w-10 h-10 cursor-pointer max-[500px]:w-7 h-7" />
+          <p className="text-2xl font-bold max-[500px]:text-xl">ShopMart</p>
         </div>
         {/* Links to pages */}
         <div className="max-[1128px]:hidden">
@@ -117,7 +126,7 @@ function Homepage() {
           </ul>
         </div>
         {/* Icons */}
-        <div className="flex items-center space-x-6">
+        <div className="flex items-center space-x-6   max-[425px]:mr-15">
           <Search
             className="cursor-pointer max-[770px]:hidden"
             onClick={searchBar}
@@ -147,10 +156,18 @@ function Homepage() {
               {count}
             </div>
           </div>
+
+          <div className="max-[1128px]:flex hidden relative items-center justify-center cursor-pointer text-2xl border-gray-400 rounded-md border border-2 ">
+            {!isOpen ? (
+              <Menu size={35} id="menu" onClick={() => setIsOpen(true)} />
+            ) : (
+              <X size={31} id="cancel" onClick={() => setIsOpen(false)} />
+            )}
+          </div>
         </div>
         {/* PopUp*/}
         <div
-          className={`bg-white w-full absolute top-0 left-0 shadow-2xl z-[9999] overflow-hidden transition-all duration-900 ease-in-out ${
+          className={`bg-white w-full absolute top-0 left-0 shadow-2xl z-[9999] overflow-hidden transition-all duration-900 ease-in-out backdrop-blur-sm  ${
             isOpen ? "h-60 opacity-100 mt-23" : "h-0 opacity-0 mt-0"
           }`}
         >
@@ -185,26 +202,18 @@ function Homepage() {
             </li>
           </ul>
         </div>
-
-        <div className="max-[1128px]:flex hidden relative items-center justify-center cursor-pointer text-2xl border-gray-400 rounded-md border border-2">
-          {!isOpen ? (
-            <Menu size={35} id="menu" onClick={() => setIsOpen(true)} />
-          ) : (
-            <X size={31} id="cancel" onClick={() => setIsOpen(false)} />
-          )}
-        </div>
       </div>
 
-      <div className="flex flex-row items-center bg-gray-200  justify-evenly w-full h-158 max-[1556px]:justify-center  max-[1128px]:bg-[url('/images/istockphoto-1487500111-612x612.jpg')] bg-cover bg-no-repeat bg-center  max-[1128px]:h-158 max-[730px]:justify-center items-center max-[730px]:h-198 max-[730px]:pt-6 max-[730px]:mr-7">
+      <div className="flex flex-row items-center bg-gray-200  justify-evenly w-full h-158 max-[1556px]:justify-center  max-[1128px]:bg-gray-200  max-[1128px]:h-158 max-[730px]:justify-center items-center  max-[730px]:mr-7">
         <div className="flex flex-col w-198 max-[1289px]:pl-6  max-[1128px]:items-center max-[1128px]:text-center auto max-[1128px]:w-full max-[1128px]:filter brightness-100  ">
-          <h1 className="text-5xl font-bold mb-4 max-[1128px]:text-white max-[580px]:">
+          <h1 className="text-5xl font-bold mb-4 max-[1128px]:text-black max-[625px]:text-4xl">
             Welcome to ShopMart!
           </h1>
-          <p className="text-3xl text-orange-400 mb-6 font-bold max-[1128px]:text-orange-600">
+          <p className="text-3xl text-orange-400 mb-6 font-bold max-[1128px]:text-orange-600 max-[625px]:text-3xl">
             Your one-stop shop for all your needs!
           </p>
 
-          <p className="text-xl text-gray-500 w-[60%] mb-8 max-[1128px]:text-black">
+          <p className="text-xl text-gray-500 w-[60%] mb-8 max-[1128px]:text--600">
             Millions of products, competitive prices, and fast delivery. Shop
             with confidence on the world's most trusted marketplace.
           </p>
@@ -222,11 +231,11 @@ function Homepage() {
           <div className="flex flex-row items-center gap-6 mt-13">
             <p className="flex flex-row items-center gap-2">
               <div className="bg-orange-500 h-3 w-3 rounded-xl "></div>
-              <span className="max-[1128px]:text-white">Secure Payment</span>
+              <span className="max-[1128px]:text-black">Secure Payment</span>
             </p>
             <p className="flex flex-row items-center gap-2">
               <div className="bg-yellow-500 h-3 w-3 rounded-xl "></div>
-              <span className="max-[1128px]:text-black">24/7 Support</span>
+              <span className="max-[1128px]:text-green-500">24/7 Support</span>
             </p>
             <p className="flex flex-row items-center gap-2">
               <div className="bg-green-500 h-3 w-3 rounded-xl "></div>
@@ -244,7 +253,7 @@ function Homepage() {
         </div>
       </div>
 
-      <div className="flex flex-col ml-43 mt-10 gap-5  ">
+      <div className="flex flex-col justify-center items-center mt-10 gap-5  ">
         <h1 className="text-3xl font-bold">Featured Products</h1>
         <p className="text-lg text-gray-600">
           Best Sellers and customer favourites
