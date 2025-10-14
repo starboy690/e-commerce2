@@ -10,9 +10,52 @@ import { useState } from "react";
 
 function Signup() {
   const [currentPart, setCurrentPart] = useState("Login");
+  const [registerEmail, setRegisterEmail] = useState("");
+  const [registerPassword, setRegisterPassword] = useState("");
+  const [registerFullName, setRegisterFullName] = useState("");
 
   const changePart = (tabName: string) => {
     if (currentPart !== tabName) setCurrentPart(tabName);
+  };
+
+  const login = (e: React.FormEvent) => {
+    e.preventDefault();
+    e.preventDefault();
+    fetch("http://localhost:6090/login", {
+      body: JSON.stringify({
+        email: registerEmail,
+        password: registerPassword,
+        fullName: registerFullName,
+      }),
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data))
+      .catch((err) => console.log(err));
+    console.log("Login form submitted");
+  };
+
+  const register = (e: React.FormEvent) => {
+    e.preventDefault();
+    e.preventDefault();
+    fetch("http://localhost:6090/register", {
+      body: JSON.stringify({
+        email: registerEmail,
+        password: registerPassword,
+        fullName: registerFullName,
+      }),
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data))
+      .catch((err) => console.log(err));
+    console.log("Register form submitted");
   };
 
   return (
@@ -89,6 +132,8 @@ function Signup() {
             <label className="text-gray-700 font-semibold">Full Name</label>
             <input
               type="text"
+              value={registerFullName}
+              onChange={(e) => setRegisterFullName(e.target.value)}
               placeholder="Enter your full name"
               className="border border-gray-300 rounded-md p-2 focus:outline-none focus:border-orange-400"
               required
@@ -98,6 +143,8 @@ function Signup() {
             <label className="text-gray-700 font-semibold">Email</label>
             <input
               type="email"
+              value={registerEmail}
+              onChange={(e) => setRegisterEmail(e.target.value)}
               placeholder="Enter your email"
               className="border border-gray-300 rounded-md p-2 focus:outline-none focus:border-orange-400"
               required
@@ -107,6 +154,8 @@ function Signup() {
             <label className="text-gray-700 font-semibold">Password</label>
             <input
               type="password"
+              value={registerPassword}
+              onChange={(e) => setRegisterPassword(e.target.value)}
               placeholder="Enter your password"
               className="border border-gray-300 rounded-md p-2 focus:outline-none focus:border-orange-400"
               required
@@ -115,6 +164,7 @@ function Signup() {
           <button
             type="submit"
             className="bg-orange-500 text-white w-4/5 h-10 rounded-md mt-11 hover:bg-orange-600 transition duration-300 cursor-pointer shadow-xl"
+            onClick={login}
           >
             Log In
           </button>
@@ -132,6 +182,8 @@ function Signup() {
             <input
               type="text"
               name="fullName"
+              value={registerFullName}
+              onChange={(e) => setRegisterFullName(e.target.value)}
               placeholder="Enter your full name"
               className="border border-gray-300 rounded-md p-2 focus:outline-none focus:border-orange-400"
               required
@@ -142,6 +194,8 @@ function Signup() {
             <input
               type="email"
               name="email"
+              value={registerEmail}
+              onChange={(e) => setRegisterEmail(e.target.value)}
               placeholder="Enter your email"
               className="border border-gray-300 rounded-md p-2 focus:outline-none focus:border-orange-400"
               required
@@ -153,6 +207,8 @@ function Signup() {
             <input
               type="password"
               name="password"
+              value={registerPassword}
+              onChange={(e) => setRegisterPassword(e.target.value)}
               placeholder="Enter your password"
               className="border border-gray-300 rounded-md p-2 focus:outline-none focus:border-orange-400"
               required
@@ -173,6 +229,7 @@ function Signup() {
           <button
             type="submit"
             className="bg-orange-500 text-white w-4/5 h-10 rounded-md mt-11 hover:bg-orange-600 transition duration-300 cursor-pointer shadow-xl"
+            onClick={register}
           >
             Sign Up
           </button>

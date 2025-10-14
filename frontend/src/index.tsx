@@ -3,8 +3,10 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Homepage() {
+  //const navigate = useNavigate();
   // @ts-ignore
   const [count, setCount] = useState(0);
 
@@ -88,7 +90,10 @@ function Homepage() {
 
       {/* Navbar */}
       <div className="bg-gray-200 w-full justify-evenly h-23 items-center sticky flex flex-row shadow-2xl z-9999  ">
-        <div className="flex flex-row items-center gap-3 ml-5 max-[1128px]:mr-32">
+        <div
+          id="logo"
+          className="flex flex-row items-center gap-3 ml-5 max-[1128px]:mr-32"
+        >
           <ShoppingCart className="text-orange-500 w-10 h-10 cursor-pointer max-[500px]:w-7 h-7" />
           <p className="text-2xl font-bold max-[500px]:text-xl">ShopMart</p>
         </div>
